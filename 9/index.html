@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vue</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!--javascript-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  
+<div class="container">
+  <div id="app">
+      <h3>Vue component</h3>
+         <ol>
+             <todo-item></todo-item>
+             <click-counter></click-counter>
+             <click-counter></click-counter>
+             <click-counter></click-counter>
+         </ol>
+
+         <h4 class="text-primary font-weight-bold">Plans:</h4>
+         <ul class="list-group">
+            <plan-picker></plan-picker>
+         </ul>         
+    
+  </div>
+</div>
+
+
+<!-- click-counter-template -->
+<script type="text/x-template" id="click-counter-template">
+    <div>
+        <p>This is counter component</p>
+        <button type="button" class="btn btn-success" @click ="count++">{{count}}</button>
+    </div>
+</script>
+
+<!-- plan-template -->
+<script type="text/x-template" id="plan-picker-template">
+    
+    <ul class="list-group">
+        <plan v-for="plan in plans" :name="plan"></plan>
+     </ul>
+
+</script>
+
+<script type="text/x-template" id="plan-template">
+    
+        <li class="list-group-item">{{name}}</li>
+    
+</script>
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

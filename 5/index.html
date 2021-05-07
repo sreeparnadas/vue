@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vue</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!--javascript-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  
+<div class="container">
+  <div id="app">
+     <ul v-for="(value,index,key) in list">
+         <li>{{ index+1 }}  {{ value }}</li>
+     </ul>
+
+
+     <div class="form-group col-lg-6">
+         <input type="text" v-model="newFruit">
+         <button @click="add">Add me</button>
+     </div>
+    
+    
+  </div>
+</div>
+
+
+<script>
+    new Vue ({
+        el: '#app',
+        data:{
+            list: [
+             fruit1= 'Apple',
+             fruit2= 'Mango',
+             fruit3= 'Banana',
+             fruit4= 'Cherry',
+            ],
+            newFruit: ''
+        },
+        methods:{
+            add: function(){
+                this.list.push(this.newFruit);
+                this.newFruit = '';
+            }
+        },
+
+        
+    });
+</script>
+</body>
+</html>
